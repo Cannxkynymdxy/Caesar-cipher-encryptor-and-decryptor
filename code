@@ -1,0 +1,25 @@
+typer = input("If you want to encrypt type enc, if you want to decrypt type dec. ")
+script = input("Write the text you want to encrypt/decrypt. ")
+nscript = ""
+cry = ""
+for i in script:
+    if i == " ":
+        continue
+    else:
+        nscript += i
+ec = {"a" : "e" , "b" : "f", "c" : "g", "d" : "h" , "e" : "i", "f" : "j", "g" : "k" , "h" : "l", "i" : "m",
+      "j" : "n" , "k" : "o", "l" : "p", "m" : "q" , "n" : "r", "o" : "s", "p" : "t" , "q" : "u", "r" : "v",
+      "s" : "w" , "t" : "x", "u" : "y", "v" : "z" , "w" : "a", "x" : "b", "y" : "c" , "z" : "d"}
+dc = {"e" : "a" , "f" : "b", "g" : "c", "h" : "d" , "i" : "e", "j" : "f", "k" : "g" , "l" : "h", "m" : "i",
+      "n" : "j" , "o" : "k", "p" : "l", "q" : "m" , "r" : "n", "s" : "o", "t" : "p" , "u" : "q", "v" : "r",
+      "w" : "s" , "x" : "t", "y" : "u", "z" : "v" , "a" : "w", "b" : "x", "c" : "y" , "d" : "z"}
+if typer == "enc":
+    for q in nscript:
+        cry += ec[q]
+    print(cry)
+elif typer == "dec":
+    for w in nscript:
+        cry +=dc[w]
+    print(cry)
+else:
+    print("Error")
